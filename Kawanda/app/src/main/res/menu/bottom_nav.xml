@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_item_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
+    <item
+        android:id="@+id/menu_item_process"
+        android:icon="@drawable/ic_toys_black_24dp"
+        android:title="Process Checklist" />
+    <item
+        android:id="@+id/menu_item_profile"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Profile" />
+    <item
+        android:id="@+id/menu_item_out"
+        android:icon="@drawable/ic_logout"
+        android:title="Logout" />
+
+
+
+</menu>

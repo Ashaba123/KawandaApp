@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.learn.kawandafood">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.clients.BrowseClientActivity"
+            android:label="@string/clients"
+            />
+        <activity android:name=".ui.process.ReceptionActivity" />
+        <activity
+            android:name=".ui.clients.AddClientActivity"
+            android:label="@string/add_client" />
+        <activity
+            android:name=".ui.process.AddProcessActivity"
+            android:label="@string/addProcess" />
+        <activity
+            android:name=".ui.products.EditProductActivity"
+            android:label="@string/editPrdct" />
+        <activity
+            android:name=".ui.products.AddProductActivity"
+            android:label="@string/addPrdct" />
+        <activity
+            android:name=".ui.ProfileActivity"
+            android:label="@string/profile" />
+        <activity
+            android:name=".ui.reports.ReportsActivity"
+            android:label="@string/reports" />
+        <activity
+            android:name=".ui.process.ProcessActivity"
+            android:label="@string/process" />
+        <activity
+            android:name=".ui.products.ProductsActivity"
+            android:label="@string/products" />
+        <activity
+            android:name=".ui.SplashScreenActivity"
+            android:theme="@style/AppTheme.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.auth.SignupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:label="@string/login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:label="@string/Dashboard" />
+    </application>
+
+</manifest>

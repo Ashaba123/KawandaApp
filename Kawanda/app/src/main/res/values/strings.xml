@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Kawanda Food</string>
+    <string name="splashtitle">Kawanda Food Processing</string>
+    <string name="splashtitle2">Inventory Management Application</string>
+    <string name="userlogin">Login</string>
+    <string name="enterEmail">Enter Email</string>
+    <string name="enterPassword">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="signup">Create an Account</string>
+    <string name="usersignup">Create Account</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="repeatPswd">Repeat Password</string>
+    <string name="Dashboard">Dashboard</string>
+    <string name="kawanda">Kawanda Food Processing Center</string>
+    <string name="kawanda2">Best Food Processing Center</string>
+    <string name="kawandacopyright">\@ CopyRight 2020</string>
+    <string name="products">Products</string>
+    <string name="process">Process</string>
+    <string name="reports">Reports</string>
+    <string name="clients">Clients</string>
+    <string name="addPrdct">Add Product</string>
+    <string name="editPrdct">Edit Product</string>
+    <string name="addProcess">Add Process</string>
+    <string name="profile">Profile</string>
+    <string name="changePass">Change Password</string>
+    <string name="save">Save</string>
+    <string name="fullname">Full Name</string>
+    <string name="enterUsername">Enter Username</string>
+    <string name="signup1">Dont have an account?  </string>
+    <string name="delete">delete</string>
+    <string name="add_client">Add Client</string>
+</resources>
