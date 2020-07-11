@@ -14,7 +14,6 @@ import java.util.List;
 
 public class ClientViewModel extends AndroidViewModel {
     private ClientRepository clientRepository;
-    private LiveData<Client> client;
 
     public ClientViewModel(@NonNull Application application) {
         super(application);

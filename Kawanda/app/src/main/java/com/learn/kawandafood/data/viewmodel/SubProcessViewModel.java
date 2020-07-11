@@ -4,9 +4,14 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 
+import com.learn.kawandafood.data.entity.Process;
+import com.learn.kawandafood.data.entity.SubProcess;
 import com.learn.kawandafood.data.repository.ProductRepository;
 import com.learn.kawandafood.data.repository.SubProcessRepository;
+
+import java.util.List;
 
 
 public class SubProcessViewModel extends AndroidViewModel {
@@ -18,6 +23,22 @@ public class SubProcessViewModel extends AndroidViewModel {
          subProcessRepository= new SubProcessRepository(application.getApplicationContext());
 
     }
+
+    public void insertSubProcess(SubProcess subProcess){
+        subProcessRepository.addSubProcess(subProcess);
+    }
+
+    public LiveData<List<SubProcess>> getSubProcess(){
+        return subProcessRepository.getSubProcesses();
+    }
+
+    public LiveData<SubProcess> getById(int id){
+        return subProcessRepository.getById(id);
+    }
+
+    public  void  deleteSubProcess(SubProcess subProcess){subProcessRepository.deleteProcess(subProcess);}
+
+
 
 
 }
