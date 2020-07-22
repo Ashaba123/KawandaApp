@@ -36,8 +36,8 @@ public class ProductViewModel extends AndroidViewModel {
     }
     public  void  deleteProduct(Product product){productRepository.deleteProduct(product);}
 
-    public  void  editProduct(int id, String name,int quantiy,String raw_material, String client){
-        productRepository.editProduct(id, name, quantiy, raw_material,client);}
+    public  void  editProduct(int id, String name,int quantiy,String raw_material){
+        productRepository.editProduct(id, name, quantiy, raw_material);}
 
 
 

@@ -29,20 +29,20 @@ public class ProductRepository {
     }
 
     public LiveData<List<Product>> getProducts() {
-        return  AppDatabase.getInstance(context).productDao().getAllProducts();
+        return AppDatabase.getInstance(context).productDao().getAllProducts();
     }
 
     public LiveData<Product> getById(int id) {
-        return  AppDatabase.getInstance(context).productDao().getById(id);
+        return AppDatabase.getInstance(context).productDao().getById(id);
     }
 
     public void deleteProduct(final Product product) {
         AsyncTask.execute(() -> AppDatabase.getInstance(context).productDao().deleteProduct(product));
     }
 
-    public void editProduct(int id, String name,int quantiy,String raw_material, String client){
+    public void editProduct(int id, String name, int quantiy, String raw_material) {
         AsyncTask.execute(() -> AppDatabase.getInstance(
-                context).productDao().editProduct(id,name,quantiy,raw_material,client));
+                context).productDao().editProduct(id, name, quantiy, raw_material));
     }
 
 

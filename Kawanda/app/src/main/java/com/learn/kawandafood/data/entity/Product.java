@@ -18,6 +18,42 @@ public class Product {
     @ColumnInfo(name = "raw_material")
     public String raw_material;
 
-    @ColumnInfo(name = "client")
-    public String client;
+    public Product() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Product setId(int id) {
+        this.id = id;
+        return this;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Product setName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Product setQuantity(int quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+
+    public String getRaw_material() {
+        return raw_material;
+    }
+
+    public Product setRaw_material(String raw_material) {
+        this.raw_material = raw_material;
+        return this;
+    }
 }

@@ -12,10 +12,9 @@ import android.view.View;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.learn.kawandafood.R;
 import com.learn.kawandafood.ui.auth.LoginActivity;
-import com.learn.kawandafood.ui.clients.AddClientActivity;
 import com.learn.kawandafood.ui.clients.BrowseClientActivity;
 import com.learn.kawandafood.ui.process.ProcessActivity;
-import com.learn.kawandafood.ui.products.ProductsActivity;
+import com.learn.kawandafood.ui.products.BrowseProductsActivity;
 import com.learn.kawandafood.ui.reports.ReportsActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         productDash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ProductsActivity.class));
+                startActivity(new Intent(MainActivity.this, BrowseProductsActivity.class));
             }
         });
 

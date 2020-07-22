@@ -30,8 +30,8 @@ public interface ProductDao {
     @Delete
     void deleteProduct(Product product);
 
-    @Query("UPDATE product SET name = :name, quantity =:quantiy,raw_material =:raw_material, client=:client WHERE id = :id")
-    void editProduct(int id, String name,int quantiy,String raw_material, String client);
+    @Query("UPDATE product SET name = :name, quantity =:quantiy,raw_material =:raw_material WHERE id = :id")
+    void editProduct(int id, String name,int quantiy,String raw_material);
 
 
 }

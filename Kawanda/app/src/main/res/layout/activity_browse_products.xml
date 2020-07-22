@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.clients.BrowseClientActivity"
     android:background="@color/colorSmokeWhite"
-    android:orientation="vertical">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,40 +12,54 @@
         android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/list_of_clients"
+            android:id="@+id/list_of_products"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp" />
 
         <ProgressBar
-            android:id="@+id/progressBar_clients"
+            android:id="@+id/progressBar_products"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminateTint="@color/colorPrimary"
             android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/txtClients"
+            android:id="@+id/txtProducts"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorPrimary"
-            android:text="No Clients"
+            android:text="No Products"
             android:visibility="invisible"/>
 
 
+
     </LinearLayout>
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAddClient"
+        android:id="@+id/btnAddProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="20dp"
         android:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_add_white_24dp"
-        />
+        android:src="@drawable/ic_add_white_24dp" />
 
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_gravity="start"
+        android:layout_alignParentBottom="true"
+        android:background="?android:attr/windowBackground"
+        android:foregroundGravity="bottom"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/bottom_nav" />
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>

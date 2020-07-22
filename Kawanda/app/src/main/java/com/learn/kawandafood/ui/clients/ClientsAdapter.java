@@ -25,20 +25,23 @@ public class ClientsAdapter extends RecyclerView.Adapter<ClientsAdapter.ViewHold
     public ClientsAdapter(List<Client> clients) {
         this.clients = clients;
     }
-    public  void  setData(List<Client> clients){this.clients =clients;}
+
+    public void setData(List<Client> clients) {
+        this.clients = clients;
+    }
 
     @NonNull
     @Override
     public ClientsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.client_row,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.client_row, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ClientsAdapter.ViewHolder holder, int position) {
-        Client client  = clients.get(position);
+        Client client = clients.get(position);
 
-        holder.clientName.setText(client.name);;
+        holder.clientName.setText(client.name);
         holder.clientNumber.setText(client.phonenumber);
 
 
@@ -49,10 +52,11 @@ public class ClientsAdapter extends RecyclerView.Adapter<ClientsAdapter.ViewHold
         return clients.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         TextView clientName;
         TextView clientNumber;
         ImageView imgDelete;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             clientName = itemView.findViewById(R.id.client_name);
@@ -63,7 +67,7 @@ public class ClientsAdapter extends RecyclerView.Adapter<ClientsAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
-                    Client  client= clients.get(position);
+                    Client client = clients.get(position);
                     ClientViewModel clientViewModel =
                             new ViewModelProvider((ViewModelStoreOwner) v.getContext()).get(ClientViewModel.class);
                     clientViewModel.deleteClient(client);

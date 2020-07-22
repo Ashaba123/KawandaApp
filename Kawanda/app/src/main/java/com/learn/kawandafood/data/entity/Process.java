@@ -9,9 +9,9 @@ import androidx.room.PrimaryKey;
 public class Process {
 
     @PrimaryKey(autoGenerate = true)
-    int id;
+    public int id;
 
     @ColumnInfo(name = "name")
-    String name;
+    public String name;
 
 }

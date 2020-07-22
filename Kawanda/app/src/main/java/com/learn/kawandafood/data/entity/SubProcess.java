@@ -7,11 +7,11 @@ import androidx.room.PrimaryKey;
 @Entity
 public class SubProcess {
     @PrimaryKey(autoGenerate = true)
-    int id;
+    public int id;
 
     @ColumnInfo(name ="process_id")
-    int process_id;
+    public int process_id;
 
     @ColumnInfo(name ="name")
-    String name;
+    public  String name;
 }

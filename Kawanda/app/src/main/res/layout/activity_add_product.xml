@@ -66,11 +66,11 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:fontFamily="sans-serif"
-                android:inputType="number" />
+                android:inputType="text" />
 
 
             <Button
-                android:id="@+id/btnAddPrdct"
+                android:id="@+id/btnSavePrdct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_bg"
@@ -78,6 +78,15 @@
                 android:layout_margin="15dp"
                 android:fontFamily="sans-serif"
                 android:text="@string/save" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:max="100"
+                android:visibility="invisible" />
 
 
         </LinearLayout>

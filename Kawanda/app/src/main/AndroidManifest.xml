@@ -11,8 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.clients.BrowseClientActivity"
-            android:label="@string/clients"
-            />
+            android:label="@string/clients" />
         <activity android:name=".ui.process.ReceptionActivity" />
         <activity
             android:name=".ui.clients.AddClientActivity"
@@ -36,7 +35,7 @@
             android:name=".ui.process.ProcessActivity"
             android:label="@string/process" />
         <activity
-            android:name=".ui.products.ProductsActivity"
+            android:name=".ui.products.BrowseProductsActivity"
             android:label="@string/products" />
         <activity
             android:name=".ui.SplashScreenActivity"
