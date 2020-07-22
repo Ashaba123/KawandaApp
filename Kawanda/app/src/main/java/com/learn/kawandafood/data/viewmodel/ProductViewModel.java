@@ -31,13 +31,13 @@ public class ProductViewModel extends AndroidViewModel {
         return productRepository.getProducts();
     }
 
-    public LiveData<Product> getById(int id){
-        return productRepository.getById(id);
+    public LiveData<Product> getProduct(int id){
+        return productRepository.getProduct(id);
     }
     public  void  deleteProduct(Product product){productRepository.deleteProduct(product);}
 
-    public  void  editProduct(int id, String name,int quantiy,String raw_material){
-        productRepository.editProduct(id, name, quantiy, raw_material);}
+    public  void  editProduct(Product product){
+        productRepository.editProduct(product);}
 
 
 

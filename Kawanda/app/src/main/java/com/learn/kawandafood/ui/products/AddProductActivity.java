@@ -23,7 +23,6 @@ public class AddProductActivity extends AppCompatActivity {
     private EditText productName;
     private EditText productQuantity;
     private EditText productRawMaterial;
-    private Button saveProduct;
     private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +35,10 @@ public class AddProductActivity extends AppCompatActivity {
         productName = findViewById(R.id.prdctname);
         productQuantity = findViewById(R.id.prdctquantity);
         productRawMaterial = findViewById(R.id.prdctrawMaterail);
-        saveProduct = findViewById(R.id.btnSavePrdct);
+        Button btnsaveProduct = findViewById(R.id.btnSavePrdct);
         progressBar = findViewById(R.id.progressBar_product);
 
-        saveProduct.setOnClickListener(new View.OnClickListener() {
+        btnsaveProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 saveProducts();

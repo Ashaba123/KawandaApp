@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Kawanda Food</string>
-    <string name="splashtitle">Kawanda Food Processing</string>
+    <string name="splashtitle">Kawanda</string>
+    <string name="splashtitle1">Food Processing</string>
     <string name="splashtitle2">Inventory Management Application</string>
     <string name="userlogin">Login</string>
     <string name="enterEmail">Enter Email</string>

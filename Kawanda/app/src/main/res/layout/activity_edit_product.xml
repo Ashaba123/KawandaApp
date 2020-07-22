@@ -1,83 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.products.EditProductActivity">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Product name"
-                android:gravity="center"
-                android:fontFamily="sans-serif"
-                android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Raw Materials"
-                android:fontFamily="sans-serif"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"/>
+                android:fontFamily="sans-serif"
+                android:text="Product name" />
 
             <EditText
-                android:id="@+id/rawmaterials"
+                android:id="@+id/edit_product_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="15dp"
                 android:fontFamily="sans-serif"
                 android:inputType="text" />
 
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quantity"
-                android:fontFamily="sans-serif"
-                android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="sans-serif"
+                android:text="Quantity" />
 
             <EditText
-                android:id="@+id/quantity"
+                android:id="@+id/edit_quantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif"
+                android:inputType="number" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                android:fontFamily="sans-serif"
+                android:text="Raw Materials" />
+
+            <EditText
+                android:id="@+id/edit_rawmaterials"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="15dp"
                 android:fontFamily="sans-serif"
                 android:inputType="text" />
 
-            <TextView
+            <Button
+                android:id="@+id/btnEditPrdct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Clients"
+                android:layout_margin="15dp"
+                android:background="@drawable/btn_bg"
                 android:fontFamily="sans-serif"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"/>
+                android:text="@string/save"
+                android:textColor="@color/white" />
 
-            <Spinner
-                android:layout_width="match_parent"
+            <ProgressBar
+                android:id="@+id/progressBar_product"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:max="100"
+                android:visibility="invisible" />
+
 
         </LinearLayout>
 

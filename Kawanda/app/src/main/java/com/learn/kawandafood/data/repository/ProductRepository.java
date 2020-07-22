@@ -32,17 +32,17 @@ public class ProductRepository {
         return AppDatabase.getInstance(context).productDao().getAllProducts();
     }
 
-    public LiveData<Product> getById(int id) {
-        return AppDatabase.getInstance(context).productDao().getById(id);
+    public LiveData<Product> getProduct(int id) {
+        return AppDatabase.getInstance(context).productDao().getProduct(id);
     }
 
     public void deleteProduct(final Product product) {
         AsyncTask.execute(() -> AppDatabase.getInstance(context).productDao().deleteProduct(product));
     }
 
-    public void editProduct(int id, String name, int quantiy, String raw_material) {
+    public void editProduct(Product product) {
         AsyncTask.execute(() -> AppDatabase.getInstance(
-                context).productDao().editProduct(id, name, quantiy, raw_material));
+                context).productDao().editProduct(product));
     }
 
 
