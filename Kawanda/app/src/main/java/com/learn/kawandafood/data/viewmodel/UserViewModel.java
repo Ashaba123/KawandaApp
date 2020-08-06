@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.learn.kawandafood.AppDatabase;
 import com.learn.kawandafood.data.entity.User;
 import com.learn.kawandafood.data.repository.UserRepository;
 
@@ -19,15 +20,20 @@ public class UserViewModel extends AndroidViewModel {
         userRepository = new UserRepository(application.getApplicationContext());
 
     }
-    public void insertNewUser(User user){
+
+    public LiveData<Integer> countUsers() {
+        return userRepository.countUsers();
+    }
+
+    public void insertNewUser(User user) {
         userRepository.addUser(user);
     }
 
-    public LiveData<User> getUser(String name, String password){
-       return userRepository.getUser(name,password);
+    public LiveData<User> getUser(String name, String password) {
+        return userRepository.getUser(name, password);
     }
 
-    public LiveData<User> getById(int id){
+    public LiveData<User> getById(int id) {
         return userRepository.getById(id);
     }
 

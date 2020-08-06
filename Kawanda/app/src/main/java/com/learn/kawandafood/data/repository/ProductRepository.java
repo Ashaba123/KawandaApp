@@ -27,6 +27,9 @@ public class ProductRepository {
             }
         });
     }
+    public  LiveData<Integer> countProducts(){
+        return AppDatabase.getInstance(context).productDao().countProducts();
+    }
 
     public LiveData<List<Product>> getProducts() {
         return AppDatabase.getInstance(context).productDao().getAllProducts();

@@ -28,11 +28,16 @@ public class UserRepository {
         });
     }
 
-    public LiveData<User> getUser(String name, String password) {
-        return  AppDatabase.getInstance(context).userDao().getUser(name, password);
+    public LiveData<Integer> countUsers() {
+        return AppDatabase.getInstance(context).userDao().countUsers();
     }
+
+    public LiveData<User> getUser(String name, String password) {
+        return AppDatabase.getInstance(context).userDao().getUser(name, password);
+    }
+
     public LiveData<User> getById(int id) {
-        return  AppDatabase.getInstance(context).userDao().getById(id);
+        return AppDatabase.getInstance(context).userDao().getById(id);
     }
 
     public void deleteItem(final User user) {

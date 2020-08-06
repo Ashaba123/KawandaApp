@@ -28,6 +28,10 @@ public class ClientRepository {
         });
     }
 
+    public LiveData<Integer>  countClients(){
+        return AppDatabase.getInstance(context).clientDao().countClients();
+    }
+
     public LiveData<List<Client>> getClients() {
         return  AppDatabase.getInstance(context).clientDao().getAllClients();
     }

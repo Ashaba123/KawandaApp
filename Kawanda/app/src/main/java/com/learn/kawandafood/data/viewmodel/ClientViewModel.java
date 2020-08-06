@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.learn.kawandafood.AppDatabase;
 import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.repository.ClientRepository;
 
@@ -20,17 +21,24 @@ public class ClientViewModel extends AndroidViewModel {
         clientRepository = new ClientRepository(application.getApplicationContext());
 
     }
-    public void insertNewUser(Client client){
+
+    public void insertNewUser(Client client) {
         clientRepository.addClient(client);
     }
 
-    public LiveData<List<Client>> getClients(){
-       return clientRepository.getClients();
+    public LiveData<List<Client>> getClients() {
+        return clientRepository.getClients();
+    }
+    public LiveData<Integer>  countClients(){
+        return clientRepository.countClients();
     }
 
-    public LiveData<Client> getById(int id){
+    public LiveData<Client> getById(int id) {
         return clientRepository.getById(id);
     }
-    public  void  deleteClient(Client client){clientRepository.deleteClient(client);}
+
+    public void deleteClient(Client client) {
+        clientRepository.deleteClient(client);
+    }
 
 }
