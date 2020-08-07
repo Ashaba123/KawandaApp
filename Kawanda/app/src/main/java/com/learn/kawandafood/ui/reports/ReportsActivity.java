@@ -2,7 +2,6 @@ package com.learn.kawandafood.ui.reports;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -18,7 +17,7 @@ import com.learn.kawandafood.data.viewmodel.UserViewModel;
 import com.learn.kawandafood.ui.MainActivity;
 import com.learn.kawandafood.ui.ProfileActivity;
 import com.learn.kawandafood.ui.auth.LoginActivity;
-import com.learn.kawandafood.ui.process.ProcessActivity;
+import com.learn.kawandafood.ui.process.BrowseProcessActivity;
 
 public class ReportsActivity extends AppCompatActivity {
 
@@ -64,7 +63,7 @@ public class ReportsActivity extends AppCompatActivity {
                         startActivity(new Intent(ReportsActivity.this, MainActivity.class));
                         break;
                     case R.id.menu_item_process:
-                        startActivity(new Intent(ReportsActivity.this, ProcessActivity.class));
+                        startActivity(new Intent(ReportsActivity.this, BrowseProcessActivity.class));
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(ReportsActivity.this, ProfileActivity.class));

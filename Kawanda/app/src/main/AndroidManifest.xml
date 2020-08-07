@@ -12,7 +12,6 @@
         <activity
             android:name=".ui.clients.BrowseClientActivity"
             android:label="@string/clients" />
-        <activity android:name=".ui.process.ReceptionActivity" />
         <activity
             android:name=".ui.clients.AddClientActivity"
             android:label="@string/add_client" />
@@ -32,7 +31,7 @@
             android:name=".ui.reports.ReportsActivity"
             android:label="@string/reports" />
         <activity
-            android:name=".ui.process.ProcessActivity"
+            android:name=".ui.process.BrowseProcessActivity"
             android:label="@string/process" />
         <activity
             android:name=".ui.products.BrowseProductsActivity"

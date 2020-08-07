@@ -1,48 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.process.ProcessActivity">
+    tools:context=".ui.process.BrowseProcessActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:orientation="vertical">
 
-            <ListView
-                android:id="@+id/process_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/btnAddProcess"
+            <ExpandableListView
+                android:id="@+id/expandableListView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/btn_bg"
-                android:textColor="@color/white"
-                android:layout_margin="15dp"
-                android:fontFamily="sans-serif"
-                android:text="@string/addProcess" />
+                android:divider="@android:color/darker_gray"
+                android:dividerHeight="0.5dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft" />
 
+            <ProgressBar
+                android:id="@+id/progressBar_process"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/colorPrimary" />
 
+            <TextView
+                android:id="@+id/txtProcess"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="No Processes Available"
+                android:textColor="@color/colorPrimary"
+                android:visibility="invisible" />
         </LinearLayout>
-    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddProcess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_add_white_24dp" />
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="59dp"
-        android:layout_gravity="start"
         android:layout_alignParentBottom="true"
+        android:layout_gravity="start"
         android:background="?android:attr/windowBackground"
         android:foregroundGravity="bottom"
-        app:labelVisibilityMode="labeled"
         app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav" />
 
 </RelativeLayout>

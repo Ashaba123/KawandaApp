@@ -32,4 +32,5 @@
     <string name="add_client">Add Client</string>
     <string name="new_password">Enter New Password</string>
     <string name="profile_tile">Kawanda Food Processing</string>
+    <string name="process_name">Process Name</string>
 </resources>

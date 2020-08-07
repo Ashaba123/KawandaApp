@@ -11,25 +11,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.learn.kawandafood.R;
-import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Product;
-import com.learn.kawandafood.data.viewmodel.ClientViewModel;
 import com.learn.kawandafood.data.viewmodel.ProductViewModel;
 import com.learn.kawandafood.ui.MainActivity;
 import com.learn.kawandafood.ui.ProfileActivity;
 import com.learn.kawandafood.ui.auth.LoginActivity;
-import com.learn.kawandafood.ui.clients.AddClientActivity;
-import com.learn.kawandafood.ui.clients.BrowseClientActivity;
-import com.learn.kawandafood.ui.clients.ClientsAdapter;
-import com.learn.kawandafood.ui.process.ProcessActivity;
+import com.learn.kawandafood.ui.process.BrowseProcessActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +89,7 @@ public class BrowseProductsActivity extends AppCompatActivity {
                         startActivity(new Intent(BrowseProductsActivity.this, MainActivity.class));
                         break;
                     case R.id.menu_item_process:
-                        startActivity(new Intent(BrowseProductsActivity.this, ProcessActivity.class));
+                        startActivity(new Intent(BrowseProductsActivity.this, BrowseProcessActivity.class));
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(BrowseProductsActivity.this, ProfileActivity.class));

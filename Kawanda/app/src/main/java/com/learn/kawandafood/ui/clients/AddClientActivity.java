@@ -20,7 +20,7 @@ import com.learn.kawandafood.data.viewmodel.ClientViewModel;
 import com.learn.kawandafood.ui.MainActivity;
 import com.learn.kawandafood.ui.ProfileActivity;
 import com.learn.kawandafood.ui.auth.LoginActivity;
-import com.learn.kawandafood.ui.process.ProcessActivity;
+import com.learn.kawandafood.ui.process.BrowseProcessActivity;
 
 public class AddClientActivity extends AppCompatActivity {
 
@@ -60,7 +60,7 @@ public class AddClientActivity extends AppCompatActivity {
                         startActivity(new Intent(AddClientActivity.this, MainActivity.class));
                         break;
                     case R.id.menu_item_process:
-                        startActivity(new Intent(AddClientActivity.this, ProcessActivity.class));
+                        startActivity(new Intent(AddClientActivity.this, BrowseProcessActivity.class));
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(AddClientActivity.this, ProfileActivity.class));

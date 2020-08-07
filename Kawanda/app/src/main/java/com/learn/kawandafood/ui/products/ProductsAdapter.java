@@ -16,8 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.learn.kawandafood.R;
 import com.learn.kawandafood.data.entity.Product;
 import com.learn.kawandafood.data.viewmodel.ProductViewModel;
-import com.learn.kawandafood.ui.MainActivity;
-import com.learn.kawandafood.ui.process.ProcessActivity;
 
 
 import java.util.List;

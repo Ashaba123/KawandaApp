@@ -21,9 +21,8 @@ import com.learn.kawandafood.R;
 import com.learn.kawandafood.data.entity.User;
 import com.learn.kawandafood.data.viewmodel.UserViewModel;
 import com.learn.kawandafood.ui.auth.LoginActivity;
-import com.learn.kawandafood.ui.process.ProcessActivity;
+import com.learn.kawandafood.ui.process.BrowseProcessActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -86,7 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(new Intent(ProfileActivity.this, MainActivity.class));
                         break;
                     case R.id.menu_item_process:
-                        startActivity(new Intent(ProfileActivity.this, ProcessActivity.class));
+                        startActivity(new Intent(ProfileActivity.this, BrowseProcessActivity.class));
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(ProfileActivity.this, ProfileActivity.class));

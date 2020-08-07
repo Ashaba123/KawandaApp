@@ -13,34 +13,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Process Name"
-                android:fontFamily="sans-serif"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_margin="10dp"
+                android:padding="10dp"
+                app:cardElevation="1dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/process_name"
+                        android:fontFamily="sans-serif"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="15dp"/>
 
-            <EditText
-                android:id="@+id/processname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:fontFamily="sans-serif"
-                android:inputType="text" />
+                    <EditText
+                        android:id="@+id/processname"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif"
+                        android:inputType="text" />
 
-            <Button
-                android:id="@+id/btnAddPrdct"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_bg"
-                android:textColor="@color/white"
-                android:layout_margin="15dp"
-                android:fontFamily="sans-serif"
-                android:text="@string/save" />
+                    <Button
+                        android:id="@+id/btnSaveProcess"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg"
+                        android:textColor="@color/white"
+                        android:layout_margin="15dp"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/save" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
 
 
@@ -48,6 +63,16 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar_proses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:max="100"
+        android:visibility="invisible" />
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
