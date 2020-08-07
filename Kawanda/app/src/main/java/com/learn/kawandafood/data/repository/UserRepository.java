@@ -32,6 +32,13 @@ public class UserRepository {
         return AppDatabase.getInstance(context).userDao().countUsers();
     }
 
+    public void changepassword(int id, String password) {
+        AsyncTask.execute(() -> {
+            AppDatabase.getInstance(context).userDao().changepassword(id, password);
+        });
+
+    }
+
     public LiveData<User> getUser(String name, String password) {
         return AppDatabase.getInstance(context).userDao().getUser(name, password);
     }
@@ -40,7 +47,11 @@ public class UserRepository {
         return AppDatabase.getInstance(context).userDao().getById(id);
     }
 
-    public void deleteItem(final User user) {
+    public LiveData<List<User>> getUsers() {
+        return AppDatabase.getInstance(context).userDao().getUsers();
+    }
+
+    public void deleteUser(final User user) {
         AsyncTask.execute(() -> AppDatabase.getInstance(context).userDao().delete(user));
     }
 

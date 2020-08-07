@@ -11,18 +11,31 @@
         android:id="@+id/ly1"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:gravity="center"
         android:background="@color/colorPrimary"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60dip"
+            android:layout_gravity="center"
             android:background="@drawable/img"
             android:scaleType="fitCenter" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textAllCaps="true"
+            android:text="@string/profile_tile"/>
+
+
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,31 +47,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            app:cardElevation="1dp"
-            android:backgroundTint="@color/colorPrimary">
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="5dp"
+            app:cardElevation="1dp">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/username_profile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
-                    android:text="Email"
+                    android:padding="10dp"
+                    android:text="Username"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:padding="10dp"
+                    android:id="@+id/user_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
+                    android:paddingBottom="10dp"
                     android:text="Email@email.com"
                     android:textColor="@color/white"
                     android:textSize="16sp"
@@ -71,43 +87,56 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="1dp"
-            android:layout_margin= "10dp">
+            android:layout_margin="10dp"
+            app:cardElevation="1dp">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:fontFamily="sans-serif"
+                    android:paddingTop="5dp"
+                    android:text="@string/changePass"
+                    android:textColor="@color/blue" />
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/new_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:fontFamily="sans-serif"
-                    android:hint="@string/changePass"
-                    android:inputType="textEmailAddress" />
-
+                    android:hint="@string/new_password"
+                    android:inputType="textPassword" />
 
                 <Button
-                    android:id="@+id/btnAddPrdct"
+                    android:id="@+id/btnSavePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:background="@drawable/btn_bg"
                     android:fontFamily="sans-serif"
                     android:text="@string/save"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:visibility="visible" />
 
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-
-
-
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="invisible" />
 
     </LinearLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

@@ -3,6 +3,8 @@ package com.learn.kawandafood.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,15 +13,19 @@ import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.learn.kawandafood.R;
+import com.learn.kawandafood.data.entity.User;
+import com.learn.kawandafood.data.viewmodel.UserViewModel;
 import com.learn.kawandafood.ui.auth.LoginActivity;
 import com.learn.kawandafood.ui.clients.BrowseClientActivity;
 import com.learn.kawandafood.ui.process.ProcessActivity;
 import com.learn.kawandafood.ui.products.BrowseProductsActivity;
 import com.learn.kawandafood.ui.reports.ReportsActivity;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayoutCompat productDash,processDash,reportDash,clientDash;
+    LinearLayoutCompat productDash, processDash, reportDash, clientDash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         processDash = findViewById(R.id.dash_process_box);
         reportDash = findViewById(R.id.dash_reports_box);
         clientDash = findViewById(R.id.dash_client_box);
+
 
         productDash.setOnClickListener(new View.OnClickListener() {
             @Override

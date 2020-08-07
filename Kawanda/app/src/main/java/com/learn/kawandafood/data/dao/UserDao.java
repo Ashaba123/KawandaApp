@@ -18,7 +18,7 @@ import static java.nio.charset.CodingErrorAction.REPLACE;
 @Dao
 public interface UserDao {
     @Query("SELECT * FROM user")
-    LiveData<List<User>> getAllUsers();
+    LiveData<List<User>> getUsers();
 
     @Query("SELECT * FROM user WHERE uid= :id")
     LiveData<User> getById(int id);
@@ -26,7 +26,6 @@ public interface UserDao {
 
     @Query("SELECT * FROM user where full_name =:name and password =:password")
     LiveData<User> getUser(String name, String password);
-
 
 
     @Query("SELECT COUNT(*) from user")

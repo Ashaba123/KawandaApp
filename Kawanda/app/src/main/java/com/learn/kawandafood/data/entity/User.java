@@ -20,6 +20,13 @@ public class User {
 
     public User(){}
 
+    public User(int uid,String fullName,String email,String password){
+        this.uid =uid;
+        this.fullName =fullName;
+        this.email =email;
+        this.password= password;
+    }
+
     public int getUid() {
         return uid;
     }
