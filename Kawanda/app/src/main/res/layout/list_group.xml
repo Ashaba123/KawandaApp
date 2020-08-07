@@ -13,16 +13,19 @@
         app:cardElevation="1dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
             <TextView
-                android:id="@+id/listTitle"
+                android:id="@+id/processTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
                 android:paddingTop="10dp"
+                android:gravity="center"
                 android:paddingBottom="10dp"
                 tools:text="Reception"
+                android:textSize="22sp"
                 android:textColor="@android:color/black"
                 />
 

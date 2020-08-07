@@ -17,10 +17,10 @@ import android.widget.TextView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.learn.kawandafood.R;
-
-import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Process;
+import com.learn.kawandafood.data.entity.SubProcess;
 import com.learn.kawandafood.data.viewmodel.ProcessViewModel;
+import com.learn.kawandafood.data.viewmodel.SubProcessViewModel;
 import com.learn.kawandafood.ui.MainActivity;
 import com.learn.kawandafood.ui.ProfileActivity;
 import com.learn.kawandafood.ui.auth.LoginActivity;
@@ -28,42 +28,42 @@ import com.learn.kawandafood.ui.auth.LoginActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrowseProcessActivity extends AppCompatActivity {
+public class BrowseSubProcessActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    FloatingActionButton btnAddProcess;
+    FloatingActionButton btnAddSubProcess;
     ProgressBar progressBar;
     TextView emptyData;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_process);
-        initUI();
+        setContentView(R.layout.activity_browse_sub_process);
+        initUi();
+
     }
 
-    private void initUI() {
-        progressBar = findViewById(R.id.progressBar_process);
-        emptyData = findViewById(R.id.txtProcess);
-        recyclerView = findViewById(R.id.list_of_processes);
+    private void initUi() {
+        progressBar = findViewById(R.id.progressBar_sub_process);
+        emptyData = findViewById(R.id.txtSubProcess);
+        recyclerView = findViewById(R.id.list_of_sub_processes);
 
-        ProcessViewModel processViewModel = new ViewModelProvider(this).get(ProcessViewModel.class);
-        List<Process> processList = new ArrayList<>();
-        ProcessAdapter processAdapter = new ProcessAdapter(processList);
+        SubProcessViewModel subProcessViewModel = new ViewModelProvider(this).get(SubProcessViewModel.class);
+        List<SubProcess> subProcesses = new ArrayList<>();
+        SubProcessAdapter processAdapter = new SubProcessAdapter(subProcesses);
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(processAdapter);
 
-        processViewModel.getProcesses().observe(this, new Observer<List<Process>>() {
+        subProcessViewModel.getSubProcess().observe(this, new Observer<List<SubProcess>>() {
             @Override
-            public void onChanged(List<Process> processes) {
-                if (processes != null) {
+            public void onChanged(List<SubProcess> subProcesses) {
+                if (subProcesses != null) {
                     progressBar.setVisibility(View.GONE);
-                    if (processes.isEmpty()) {
+                    if (subProcesses.isEmpty()) {
                         emptyData.setVisibility(View.VISIBLE);
                     } else {
-                        processAdapter.setData(processes);
+                        processAdapter.setData(subProcesses);
                         processAdapter.notifyDataSetChanged();
                     }
                 }
@@ -71,17 +71,15 @@ public class BrowseProcessActivity extends AppCompatActivity {
         });
 
 
+        //Add a sub process
+        btnAddSubProcess = findViewById(R.id.btnAddSubProcess);
 
-        //Add a process
-        btnAddProcess = findViewById(R.id.btnAddProcess);
-
-        btnAddProcess.setOnClickListener(new View.OnClickListener() {
+        btnAddSubProcess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(BrowseProcessActivity.this, AddProcessActivity.class));
+                startActivity(new Intent(BrowseSubProcessActivity.this, AddProcessActivity.class));
             }
         });
-
 
 
         //Bottom navigation
@@ -92,17 +90,17 @@ public class BrowseProcessActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
                     case R.id.menu_item_home:
-                        startActivity(new Intent(BrowseProcessActivity.this, MainActivity.class));
+                        startActivity(new Intent(BrowseSubProcessActivity.this, MainActivity.class));
                         break;
                     case R.id.menu_item_process:
-                        startActivity(new Intent(BrowseProcessActivity.this, BrowseProcessActivity.class));
+                        startActivity(new Intent(BrowseSubProcessActivity.this, BrowseProcessActivity.class));
                         break;
                     case R.id.menu_item_profile:
-                        startActivity(new Intent(BrowseProcessActivity.this, ProfileActivity.class));
+                        startActivity(new Intent(BrowseSubProcessActivity.this, ProfileActivity.class));
                         break;
 
                     case R.id.menu_item_out:
-                        startActivity(new Intent(BrowseProcessActivity.this, LoginActivity.class));
+                        startActivity(new Intent(BrowseSubProcessActivity.this, LoginActivity.class));
                         finish();
                         break;
                 }
