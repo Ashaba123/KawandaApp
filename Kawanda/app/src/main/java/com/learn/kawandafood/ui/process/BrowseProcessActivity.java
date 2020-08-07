@@ -2,6 +2,7 @@ package com.learn.kawandafood.ui.process;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -49,18 +50,38 @@ public class BrowseProcessActivity extends AppCompatActivity {
     }
 
     private void initUI() {
+        progressBar = findViewById(R.id.progressBar_process);
+        emptyData = findViewById(R.id.txtProcess);
 
         //Expanded list view of processes
         expandableListView = findViewById(R.id.expandableListView);
-
         expandableListDetail = ExpandableListDataPump.getData();
+
         ProcessViewModel processViewModel = new ViewModelProvider(this).get(ProcessViewModel.class);
 
 
         expandableListTitle = new ArrayList<>();
-        expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
 
+
+        processViewModel.getProcesses().observe(this, new Observer<List<Process>>() {
+            @Override
+            public void onChanged(List<Process> processes) {
+                if (processes != null) {
+                    progressBar.setVisibility(View.GONE);
+                    if (processes.isEmpty()) {
+                        emptyData.setVisibility(View.VISIBLE);
+                    } else {
+                        expandableListTitle =processes;
+
+                    }
+                }
+            }
+        });
+
+        expandableListAdapter = new CustomExpandableListAdapter(this, expandableListTitle, expandableListDetail);
         expandableListView.setAdapter(expandableListAdapter);
+
+
         expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override

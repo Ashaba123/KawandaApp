@@ -19,7 +19,6 @@
                 android:id="@+id/listTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"

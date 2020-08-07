@@ -9,6 +9,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import com.learn.kawandafood.R;
+import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Process;
 
 import java.util.HashMap;
@@ -32,6 +33,10 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         this.context = context;
         this.processTitle = processTitle;
         this.subProcessDetail = subProcessDetail;
+    }
+
+    public void setData(List<Process> processes) {
+        this.processTitle = processes;
     }
 
     @Override
@@ -82,9 +87,10 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getGroupView(int listPosition, boolean isExpanded,
-                             View convertView, ViewGroup parent) {
-        String listTitle = (String) getGroup(listPosition);
+    public View getGroupView(int listPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+
+       // String listTitle = (String) getGroup(listPosition);
+        Process process =processTitle.get(listPosition);
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) this.context.
                     getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -92,8 +98,9 @@ public class CustomExpandableListAdapter extends BaseExpandableListAdapter {
         }
         TextView listTitleTextView = (TextView) convertView
                 .findViewById(R.id.listTitle);
+
         listTitleTextView.setTypeface(null, Typeface.BOLD);
-        listTitleTextView.setText(listTitle);
+        listTitleTextView.setText(process.name);
         return convertView;
     }
 
