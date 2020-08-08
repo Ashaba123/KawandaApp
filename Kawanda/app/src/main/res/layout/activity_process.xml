@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottom_navigation"
         android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
+        android:layout_margin="5dp"
         android:backgroundTint="@color/colorPrimary"
         android:src="@drawable/ic_add_white_24dp" />
 
