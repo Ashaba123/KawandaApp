@@ -35,4 +35,5 @@
     <string name="process_name">Process Name</string>
     <string name="sub_processes">Sub Processes:</string>
     <string name="subprocess_name">SubProcess Name</string>
+    <string name="no_subprocesses">No SubProcesses</string>
 </resources>
