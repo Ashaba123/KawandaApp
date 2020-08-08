@@ -1,5 +1,6 @@
 package com.learn.kawandafood.ui.clients;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -9,15 +10,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.learn.kawandafood.R;
 import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.viewmodel.ClientViewModel;
 import com.learn.kawandafood.ui.MainActivity;
+import com.learn.kawandafood.ui.ProfileActivity;
+import com.learn.kawandafood.ui.auth.LoginActivity;
+import com.learn.kawandafood.ui.process.BrowseProcessActivity;
+import com.learn.kawandafood.ui.products.BrowseProductsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,5 +78,33 @@ public class BrowseClientActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //Bottom navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+                switch (menuItem.getItemId()) {
+                    case R.id.menu_item_home:
+                        startActivity(new Intent(BrowseClientActivity.this, MainActivity.class));
+                        break;
+                    case R.id.menu_item_process:
+                        startActivity(new Intent(BrowseClientActivity.this, BrowseProcessActivity.class));
+                        break;
+                    case R.id.menu_item_profile:
+                        startActivity(new Intent(BrowseClientActivity.this, ProfileActivity.class));
+                        break;
+
+                    case R.id.menu_item_out:
+                        startActivity(new Intent(BrowseClientActivity.this, LoginActivity.class));
+                        finish();
+                        break;
+                }
+
+                return true;
+            }
+        });
+
     }
 }

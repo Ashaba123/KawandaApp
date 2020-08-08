@@ -4,14 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.learn.kawandafood.R;
-import com.learn.kawandafood.data.entity.Process;
 import com.learn.kawandafood.data.entity.SubProcess;
 
 import java.util.List;
@@ -30,7 +28,7 @@ public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.Vi
     @NonNull
     @Override
     public SubProcessAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.sub_process_row, parent, false);
         return new SubProcessAdapter.ViewHolder(view);
     }
 

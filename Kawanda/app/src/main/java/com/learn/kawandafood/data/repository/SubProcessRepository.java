@@ -6,8 +6,6 @@ import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 
 import com.learn.kawandafood.AppDatabase;
-import com.learn.kawandafood.data.entity.Client;
-import com.learn.kawandafood.data.entity.Process;
 import com.learn.kawandafood.data.entity.SubProcess;
 
 import java.util.List;
@@ -29,8 +27,16 @@ public class SubProcessRepository {
         });
     }
 
-    public LiveData<List<SubProcess>> getSubProcesses() {
+    public LiveData<List<SubProcess>> getAllSubProcesses() {
         return  AppDatabase.getInstance(context).subProcessDao().getAllSubProcesses();
+    }
+
+    public LiveData<List<SubProcess>> getSubProcesses(int processId) {
+        return  AppDatabase.getInstance(context).subProcessDao().getSubProcesses(processId);
+    }
+
+    public LiveData<Integer> countSubProcesses(){
+        return  AppDatabase.getInstance(context).subProcessDao().countSubProcesses();
     }
 
     public LiveData<SubProcess> getById(int id) {

@@ -17,6 +17,9 @@ public interface SubProcessDao {
     @Query("SELECT * FROM subprocess")
     LiveData<List<SubProcess>> getAllSubProcesses();
 
+    @Query("SELECT * FROM subprocess WHERE process_id =:processId")
+    LiveData<List<SubProcess>> getSubProcesses(int processId);
+
     @Query("SELECT * FROM subprocess WHERE id= :id")
     LiveData<SubProcess> getById(int id);
 
@@ -28,7 +31,7 @@ public interface SubProcessDao {
     void insertSubProcess(SubProcess... subProcesses);
 
     @Delete
-    void deleteSubProcess(SubProcess  subProcess);
+    void deleteSubProcess(SubProcess subProcess);
 
 
 }

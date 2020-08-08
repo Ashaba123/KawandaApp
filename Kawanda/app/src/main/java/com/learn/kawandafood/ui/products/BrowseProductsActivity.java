@@ -33,6 +33,7 @@ public class BrowseProductsActivity extends AppCompatActivity {
     ProgressBar progressBar;
     TextView emptyData;
     FloatingActionButton btnAddProduct;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -34,6 +34,7 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
     FloatingActionButton btnAddSubProcess;
     ProgressBar progressBar;
     TextView emptyData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +48,9 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
         emptyData = findViewById(R.id.txtSubProcess);
         recyclerView = findViewById(R.id.list_of_sub_processes);
 
+        Bundle extrasBundle = getIntent().getExtras();
+        int id = extrasBundle.getInt("id");
+
         SubProcessViewModel subProcessViewModel = new ViewModelProvider(this).get(SubProcessViewModel.class);
         List<SubProcess> subProcesses = new ArrayList<>();
         SubProcessAdapter processAdapter = new SubProcessAdapter(subProcesses);
@@ -55,7 +59,7 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(processAdapter);
 
-        subProcessViewModel.getSubProcess().observe(this, new Observer<List<SubProcess>>() {
+        subProcessViewModel.getSubProcesses(id).observe(this, new Observer<List<SubProcess>>() {
             @Override
             public void onChanged(List<SubProcess> subProcesses) {
                 if (subProcesses != null) {
