@@ -36,4 +36,5 @@
     <string name="sub_processes">Sub Processes:</string>
     <string name="subprocess_name">SubProcess Name</string>
     <string name="no_subprocesses">No SubProcesses</string>
+    <string name="is_sub_process_compeleted">Is sub process compeleted?</string>
 </resources>

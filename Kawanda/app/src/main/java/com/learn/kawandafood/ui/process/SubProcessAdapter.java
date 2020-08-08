@@ -14,7 +14,7 @@ import com.learn.kawandafood.data.entity.SubProcess;
 
 import java.util.List;
 
-public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.ViewHolder>  {
+public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.ViewHolder> {
     private List<SubProcess> subProcesses;
 
     public SubProcessAdapter(List<SubProcess> subProcesses) {
@@ -37,6 +37,8 @@ public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.Vi
         SubProcess subProcess = subProcesses.get(position);
         holder.processName.setText(subProcess.name);
         holder.chked.setChecked(subProcess.checked);
+
+
     }
 
     @Override
@@ -52,6 +54,7 @@ public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.Vi
             super(itemView);
             processName = itemView.findViewById(R.id.sub_process_name);
             chked = itemView.findViewById(R.id.chkbox);
+
         }
 
 

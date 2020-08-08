@@ -68,7 +68,7 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.ViewHold
             super(itemView);
             processName = itemView.findViewById(R.id.processTitle);
             subProcessCount = itemView.findViewById(R.id.sub_process_count);
-            imgDelete = itemView.findViewById(R.id.img_delete);
+            imgDelete = itemView.findViewById(R.id.img_delete_process);
 
             imgDelete.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -41,7 +41,6 @@
                     android:id="@+id/processTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
                     tools:text="Reception" />
@@ -54,7 +53,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
+                        android:layout_marginEnd="5dp"
                         android:text="@string/sub_processes"
                         android:textSize="14sp" />
 
@@ -62,15 +61,18 @@
                         android:id="@+id/sub_process_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="14sp"
                         tools:text="2" />
+
                     <ImageView
-                        android:id="@+id/img_delete"
+                        android:id="@+id/img_delete_process"
                         android:layout_width="wrap_content"
-                        android:layout_marginStart="50dp"
+                        android:layout_marginStart="15dp"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/delete"
                         android:src="@drawable/ic_delete_black_24dp"/>
+
 
                 </LinearLayout>
             </LinearLayout>

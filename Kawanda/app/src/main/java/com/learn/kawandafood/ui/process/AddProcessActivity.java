@@ -57,5 +57,6 @@ public class AddProcessActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Saved Process", Toast.LENGTH_LONG).show();
         progressBar.setVisibility(View.INVISIBLE);
         startActivity(new Intent(getApplicationContext(), BrowseProcessActivity.class));
+        finish();
     }
 }

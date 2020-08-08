@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -34,6 +35,7 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
     FloatingActionButton btnAddSubProcess;
     ProgressBar progressBar;
     TextView emptyData;
+
     int id;
 
     @Override
