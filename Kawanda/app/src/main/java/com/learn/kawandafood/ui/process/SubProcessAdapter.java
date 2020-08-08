@@ -4,7 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,8 +38,6 @@ public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.Vi
     public void onBindViewHolder(@NonNull SubProcessAdapter.ViewHolder holder, int position) {
         SubProcess subProcess = subProcesses.get(position);
         holder.processName.setText(subProcess.name);
-        holder.chked.setChecked(subProcess.checked);
-
 
     }
 
@@ -48,12 +48,12 @@ public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView processName;
-        CheckBox chked;
+        ImageView imgDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             processName = itemView.findViewById(R.id.sub_process_name);
-            chked = itemView.findViewById(R.id.chkbox);
+            imgDelete = itemView.findViewById(R.id.img_delete_sub_process);
 
         }
 

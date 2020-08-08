@@ -24,8 +24,6 @@ public class AddSubProcessActivity extends AppCompatActivity {
     private EditText subProcessName;
     private ProgressBar progressBar;
     private int id;
-    private CheckBox chked;
-    private boolean isChecked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +37,6 @@ public class AddSubProcessActivity extends AppCompatActivity {
         saveSubProcess = findViewById(R.id.btnSaveSubProcess);
         progressBar = findViewById(R.id.progressBar_proses);
 
-        if (chked.isChecked()) {
-           isChecked= true;
-        } else {
-            isChecked =false;
-        }
 
 
         Bundle extrasBundle = getIntent().getExtras();
@@ -65,7 +58,6 @@ public class AddSubProcessActivity extends AppCompatActivity {
         SubProcessViewModel subProcessViewModel = new ViewModelProvider(this).get(SubProcessViewModel.class);
         SubProcess subProcess = new SubProcess();
         subProcess.process_id = id;
-        subProcess.checked =isChecked;
         subProcess.name = subProcessTitle;
         subProcessViewModel.insertSubProcess(subProcess);
         Toast.makeText(getApplicationContext(), "Saved Sub Process Successfully", Toast.LENGTH_LONG).show();

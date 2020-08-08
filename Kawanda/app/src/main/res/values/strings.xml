@@ -7,7 +7,7 @@
     <string name="enterEmail">Enter Email</string>
     <string name="enterPassword">Enter Password</string>
     <string name="login">Login</string>
-    <string name="signup">Create an Account</string>
+    <string name="signup"> Create an Account</string>
     <string name="usersignup">Create Account</string>
     <string name="sign_up">Sign Up</string>
     <string name="repeatPswd">Repeat Password</string>
@@ -27,7 +27,7 @@
     <string name="save">Save</string>
     <string name="fullname">Full Name</string>
     <string name="enterUsername">Enter Username</string>
-    <string name="signup1">Dont have an account?  </string>
+    <string name="signup1">Dont have an account?</string>
     <string name="delete">delete</string>
     <string name="add_client">Add Client</string>
     <string name="new_password">Enter New Password</string>
