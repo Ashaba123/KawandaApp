@@ -22,6 +22,7 @@ public class AddProcessActivity extends AppCompatActivity {
     private EditText processName;
     private ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class AddProcessActivity extends AppCompatActivity {
         processName = findViewById(R.id.processname);
         saveProcess = findViewById(R.id.btnSaveProcess);
         progressBar = findViewById(R.id.progressBar_proses);
+
 
         saveProcess.setOnClickListener(new View.OnClickListener() {
             @Override

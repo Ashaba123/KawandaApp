@@ -34,4 +34,5 @@
     <string name="profile_tile">Kawanda Food Processing</string>
     <string name="process_name">Process Name</string>
     <string name="sub_processes">Sub Processes:</string>
+    <string name="subprocess_name">SubProcess Name</string>
 </resources>

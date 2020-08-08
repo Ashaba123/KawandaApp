@@ -5,10 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.process.AddProcessActivity">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,8 +57,6 @@
 
 
         </LinearLayout>
-
-    </ScrollView>
 
     <ProgressBar
         android:id="@+id/progressBar_proses"

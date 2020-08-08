@@ -34,6 +34,7 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
     FloatingActionButton btnAddSubProcess;
     ProgressBar progressBar;
     TextView emptyData;
+    int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,16 +49,17 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
         emptyData = findViewById(R.id.txtSubProcess);
         recyclerView = findViewById(R.id.list_of_sub_processes);
 
+        //get process id from the selected process
         Bundle extrasBundle = getIntent().getExtras();
-        int id = extrasBundle.getInt("id");
+        id = extrasBundle.getInt("id");
 
         SubProcessViewModel subProcessViewModel = new ViewModelProvider(this).get(SubProcessViewModel.class);
         List<SubProcess> subProcesses = new ArrayList<>();
-        SubProcessAdapter processAdapter = new SubProcessAdapter(subProcesses);
+        SubProcessAdapter subProcessAdapter = new SubProcessAdapter(subProcesses);
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(processAdapter);
+        recyclerView.setAdapter(subProcessAdapter);
 
         subProcessViewModel.getSubProcesses(id).observe(this, new Observer<List<SubProcess>>() {
             @Override
@@ -67,8 +69,8 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
                     if (subProcesses.isEmpty()) {
                         emptyData.setVisibility(View.VISIBLE);
                     } else {
-                        processAdapter.setData(subProcesses);
-                        processAdapter.notifyDataSetChanged();
+                        subProcessAdapter.setData(subProcesses);
+                        subProcessAdapter.notifyDataSetChanged();
                     }
                 }
             }
@@ -81,7 +83,10 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
         btnAddSubProcess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(BrowseSubProcessActivity.this, AddProcessActivity.class));
+                Intent intent = new Intent(v.getContext(), BrowseSubProcessActivity.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
+                finish();
             }
         });
 

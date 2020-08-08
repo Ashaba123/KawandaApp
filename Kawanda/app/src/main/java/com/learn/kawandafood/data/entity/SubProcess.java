@@ -14,4 +14,15 @@ public class SubProcess {
 
     @ColumnInfo(name ="name")
     public  String name;
+
+    public SubProcess() {
+    }
+
+    public SubProcess(int id, int process_id, String name) {
+        this.id = id;
+        this.process_id = process_id;
+        this.name = name;
+    }
+
+
 }
