@@ -36,6 +36,7 @@ public class SubProcessAdapter extends RecyclerView.Adapter<SubProcessAdapter.Vi
     public void onBindViewHolder(@NonNull SubProcessAdapter.ViewHolder holder, int position) {
         SubProcess subProcess = subProcesses.get(position);
         holder.processName.setText(subProcess.name);
+        holder.chked.setChecked(subProcess.checked);
     }
 
     @Override

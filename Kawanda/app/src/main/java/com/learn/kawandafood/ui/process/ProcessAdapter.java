@@ -4,13 +4,22 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.learn.kawandafood.R;
+import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Process;
+import com.learn.kawandafood.data.viewmodel.ClientViewModel;
+import com.learn.kawandafood.data.viewmodel.ProcessViewModel;
+import com.learn.kawandafood.data.viewmodel.SubProcessViewModel;
 
 import java.util.List;
 
@@ -37,6 +46,7 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.ViewHold
         Process process = processes.get(position);
         holder.processName.setText(process.name);
 
+
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), BrowseSubProcessActivity.class);
             intent.putExtra("id", processes.get(position).id);
@@ -51,10 +61,34 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView processName;
+        TextView subProcessCount;
+        ImageView imgDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             processName = itemView.findViewById(R.id.processTitle);
+            subProcessCount = itemView.findViewById(R.id.sub_process_count);
+            imgDelete = itemView.findViewById(R.id.img_delete);
+
+            imgDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Process process = processes.get(position);
+                    ProcessViewModel processViewModel =
+                            new ViewModelProvider((ViewModelStoreOwner) v.getContext()).get(ProcessViewModel.class);
+                    processViewModel.deleteProcess(process);
+                    Toast.makeText(v.getContext(), "Deleted", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            SubProcessViewModel subProcessViewModel =
+                    new ViewModelProvider((ViewModelStoreOwner) itemView.getContext()).get(SubProcessViewModel.class);
+            subProcessViewModel.countSubProcesses().observe((LifecycleOwner) itemView.getContext(), integer -> {
+                subProcessCount.setText(String.valueOf(integer));
+            });
+
+
         }
 
 

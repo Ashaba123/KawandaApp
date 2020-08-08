@@ -51,7 +51,10 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
 
         //get process id from the selected process
         Bundle extrasBundle = getIntent().getExtras();
-        id = extrasBundle.getInt("id");
+        if (extrasBundle != null) {
+            id = extrasBundle.getInt("id");
+        }
+
 
         SubProcessViewModel subProcessViewModel = new ViewModelProvider(this).get(SubProcessViewModel.class);
         List<SubProcess> subProcesses = new ArrayList<>();

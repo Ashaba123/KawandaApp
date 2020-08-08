@@ -29,7 +29,9 @@
                     android:layout_weight="1"
                     android:padding="5dp"
                     android:textSize="20sp"
-                    tools:text="SubProcess" />
+                    android:inputType="textCapCharacters"
+                    tools:text="SubProcess"
+                    tools:ignore="TextViewEdits" />
 
                 <CheckBox
                     android:id="@+id/chkbox"

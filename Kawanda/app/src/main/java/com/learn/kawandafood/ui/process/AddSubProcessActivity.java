@@ -38,8 +38,9 @@ public class AddSubProcessActivity extends AppCompatActivity {
 
 
         Bundle extrasBundle = getIntent().getExtras();
-        id = extrasBundle.getInt("id");
-
+        if (extrasBundle != null) {
+            id = extrasBundle.getInt("id");
+        }
         saveSubProcess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,11 +55,11 @@ public class AddSubProcessActivity extends AppCompatActivity {
 
         SubProcessViewModel subProcessViewModel = new ViewModelProvider(this).get(SubProcessViewModel.class);
         SubProcess subProcess = new SubProcess();
-        subProcess.process_id =id;
+        subProcess.process_id = id;
         subProcess.name = subProcessTitle;
         subProcessViewModel.insertSubProcess(subProcess);
         Toast.makeText(getApplicationContext(), "Saved Sub Process Successfully", Toast.LENGTH_LONG).show();
         progressBar.setVisibility(View.INVISIBLE);
-        startActivity(new Intent(getApplicationContext(), BrowseSubProcessActivity.class));
+        startActivity(new Intent(getApplicationContext(), BrowseProcessActivity.class));
     }
 }
