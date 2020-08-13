@@ -9,12 +9,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.learn.kawandafood.R;
+import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Product;
+import com.learn.kawandafood.data.viewmodel.ClientViewModel;
 import com.learn.kawandafood.data.viewmodel.ProductViewModel;
 
 
@@ -44,7 +47,12 @@ class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
 
         holder.productName.setText(product.name);
         holder.productQuantity.setText(String.valueOf(product.quantity));
-        holder.productRawMaterial.setText(product.raw_material);
+        ClientViewModel clientViewModel = new ViewModelProvider((ViewModelStoreOwner) holder.itemView.getContext()).get(ClientViewModel.class);
+        clientViewModel.getById(product.client_id).observe((LifecycleOwner) holder.itemView.getContext(), client -> {
+            holder.clientName.setText(client.name);
+        });
+
+
     }
 
     @Override
@@ -55,16 +63,19 @@ class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView productName;
         TextView productQuantity;
-        TextView productRawMaterial;
+        TextView clientName;
         ImageView imgDelete;
         ImageView imgEdit;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             productName = itemView.findViewById(R.id.prdct_name);
             productQuantity = itemView.findViewById(R.id.prdct_quantity);
-            productRawMaterial = itemView.findViewById(R.id.prdct_raw_material);
+            clientName = itemView.findViewById(R.id.client_names);
             imgDelete = itemView.findViewById(R.id.img_deleteP);
             imgEdit = itemView.findViewById(R.id.img_edit);
+
+
 
 
             imgEdit.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +86,7 @@ class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
                     Product product = products.get(position);
                     Intent intent = new Intent(v.getContext(), EditProductActivity.class);
                     intent.putExtra("id", product.getId());
+                    intent.putExtra("client_id", product.getClient_id());
                     v.getContext().startActivity(intent);
                 }
             });
@@ -87,7 +99,9 @@ class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHolder> {
                     ProductViewModel productViewModel =
                             new ViewModelProvider((ViewModelStoreOwner) v.getContext()).get(ProductViewModel.class);
                     productViewModel.deleteProduct(product);
+                    notifyDataSetChanged();
                     Toast.makeText(v.getContext(), "Deleted Product", Toast.LENGTH_SHORT).show();
+
                 }
             });
 

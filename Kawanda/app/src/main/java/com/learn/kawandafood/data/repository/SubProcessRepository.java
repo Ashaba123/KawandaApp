@@ -35,8 +35,8 @@ public class SubProcessRepository {
         return  AppDatabase.getInstance(context).subProcessDao().getSubProcesses(processId);
     }
 
-    public LiveData<Integer> countSubProcesses(){
-        return  AppDatabase.getInstance(context).subProcessDao().countSubProcesses();
+    public LiveData<Integer> countSubProcesses(int process_id){
+        return  AppDatabase.getInstance(context).subProcessDao().countSubProcesses( process_id);
     }
 
     public LiveData<SubProcess> getById(int id) {

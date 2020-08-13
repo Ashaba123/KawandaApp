@@ -24,8 +24,8 @@ public interface SubProcessDao {
     LiveData<SubProcess> getById(int id);
 
 
-    @Query("SELECT COUNT(*) from subprocess")
-    LiveData<Integer> countSubProcesses();
+    @Query("SELECT COUNT(*) from subprocess WHERE process_id =:process_id")
+    LiveData<Integer> countSubProcesses(int process_id);
 
     @Insert
     void insertSubProcess(SubProcess... subProcesses);

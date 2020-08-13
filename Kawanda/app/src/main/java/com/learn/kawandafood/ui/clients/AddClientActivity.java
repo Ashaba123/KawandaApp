@@ -58,12 +58,15 @@ public class AddClientActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_item_home:
                         startActivity(new Intent(AddClientActivity.this, MainActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_process:
                         startActivity(new Intent(AddClientActivity.this, BrowseProcessActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(AddClientActivity.this, ProfileActivity.class));
+                        finish();
                         break;
 
                     case R.id.menu_item_out:
@@ -81,6 +84,18 @@ public class AddClientActivity extends AppCompatActivity {
         String name = clientName.getText().toString();
         String number = clientNumber.getText().toString();
 
+        if(name.isEmpty()){
+            clientName.setError("Please enter client name");
+            clientName.requestFocus();
+            return;
+        }
+
+        if(number.isEmpty()){
+            clientNumber.setError("Please enter client name");
+            clientNumber.requestFocus();
+            return;
+        }
+
         progressBar.setVisibility(View.VISIBLE);
         ClientViewModel clientViewModel = new ViewModelProvider(this).get(ClientViewModel.class);
         Client client = new Client();
@@ -90,6 +105,7 @@ public class AddClientActivity extends AppCompatActivity {
         progressBar.setVisibility(View.INVISIBLE);
         Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(), BrowseClientActivity.class));
+        finish();
 
 
     }

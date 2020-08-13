@@ -17,6 +17,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/select_client"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"/>
+
+            <Spinner
+                android:id="@+id/add_client"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="sans-serif"
+                android:inputType="text" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="Name"
                 android:fontFamily="sans-serif"
                 android:layout_marginRight="5dp"
@@ -36,7 +55,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Quantity"
+                android:text="@string/quantity_kgs"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"/>
@@ -50,23 +69,7 @@
                 android:layout_marginLeft="5dp"
                 android:fontFamily="sans-serif"
                 android:inputType="number" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Raw Material"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"/>
 
-            <EditText
-                android:id="@+id/prdctrawMaterail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:fontFamily="sans-serif"
-                android:inputType="text" />
 
 
             <Button
@@ -76,6 +79,7 @@
                 android:background="@drawable/btn_bg"
                 android:textColor="@color/white"
                 android:layout_margin="15dp"
+                android:visibility="visible"
                 android:fontFamily="sans-serif"
                 android:text="@string/save" />
 

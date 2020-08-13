@@ -41,8 +41,8 @@ public class SubProcessViewModel extends AndroidViewModel {
         return subProcessRepository.getSubProcesses(processId);
     }
 
-    public LiveData<Integer> countSubProcesses() {
-        return subProcessRepository.countSubProcesses();
+    public LiveData<Integer> countSubProcesses(int process_id) {
+        return subProcessRepository.countSubProcesses(process_id);
     }
 
     public void deleteSubProcess(SubProcess subProcess) {

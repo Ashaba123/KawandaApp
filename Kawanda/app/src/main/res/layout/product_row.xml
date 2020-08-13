@@ -79,14 +79,12 @@
                     android:text="Quantity" />
 
 
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="10dp"
                     android:textSize="12sp"
-                    android:text="Raw materail" />
+                    android:text="@string/client" />
 
 
             </LinearLayout>
@@ -103,13 +101,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:textColor="@color/blue"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     tools:text="Quantity" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:text="Kgs"
                     android:textColor="@color/blue"
                     android:layout_marginStart="5dp" />
@@ -124,12 +122,12 @@
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/prdct_raw_material"
+                    android:id="@+id/client_names"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:textColor="@color/blue"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     tools:text="Raw materail" />
 
 

@@ -37,4 +37,9 @@
     <string name="subprocess_name">SubProcess Name</string>
     <string name="no_subprocesses">No SubProcesses</string>
     <string name="is_sub_process_compeleted">Is sub process compeleted?</string>
+    <string name="select_product">Select Product</string>
+    <string name="select_client">Select Client</string>
+    <string name="client">Client:</string>
+    <string name="product_name">Product Name:</string>
+    <string name="quantity_kgs">Quantity(Kgs)</string>
 </resources>

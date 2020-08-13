@@ -6,7 +6,6 @@ import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 
 import com.learn.kawandafood.AppDatabase;
-import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Product;
 
 import java.util.List;
@@ -27,7 +26,8 @@ public class ProductRepository {
             }
         });
     }
-    public  LiveData<Integer> countProducts(){
+
+    public LiveData<Integer> countProducts() {
         return AppDatabase.getInstance(context).productDao().countProducts();
     }
 

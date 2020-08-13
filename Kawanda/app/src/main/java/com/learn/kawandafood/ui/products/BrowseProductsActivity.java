@@ -52,6 +52,7 @@ public class BrowseProductsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(BrowseProductsActivity.this, AddProductActivity.class));
+                finish();
             }
         });
 
@@ -71,6 +72,7 @@ public class BrowseProductsActivity extends AppCompatActivity {
                     if (products.isEmpty()) {
                         emptyData.setVisibility(View.VISIBLE);
                     } else {
+                        List<Product> s = products;
                         productsAdapter.setData(products);
                         productsAdapter.notifyDataSetChanged();
                     }
@@ -88,12 +90,15 @@ public class BrowseProductsActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_item_home:
                         startActivity(new Intent(BrowseProductsActivity.this, MainActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_process:
                         startActivity(new Intent(BrowseProductsActivity.this, BrowseProcessActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(BrowseProductsActivity.this, ProfileActivity.class));
+                        finish();
                         break;
 
                     case R.id.menu_item_out:

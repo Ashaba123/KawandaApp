@@ -19,6 +19,7 @@ import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Process;
 import com.learn.kawandafood.data.viewmodel.ClientViewModel;
 import com.learn.kawandafood.data.viewmodel.ProcessViewModel;
+import com.learn.kawandafood.data.viewmodel.ProductViewModel;
 import com.learn.kawandafood.data.viewmodel.SubProcessViewModel;
 
 import java.util.List;
@@ -46,6 +47,17 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.ViewHold
         Process process = processes.get(position);
         holder.processName.setText(process.name);
 
+        ProductViewModel productViewModel = new ViewModelProvider((ViewModelStoreOwner) holder.itemView.getContext()).get(ProductViewModel.class);
+        productViewModel.getProduct(process.product_id).observe((LifecycleOwner) holder.itemView.getContext(), product -> {
+            holder.productName.setText(product.name);
+        });
+
+        SubProcessViewModel subProcessViewModel =
+                new ViewModelProvider((ViewModelStoreOwner) holder.itemView.getContext()).get(SubProcessViewModel.class);
+        subProcessViewModel.countSubProcesses(process.id).observe((LifecycleOwner) holder.itemView.getContext(), integer -> {
+            holder.subProcessCount.setText(String.valueOf(integer));
+        });
+
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(v.getContext(), BrowseSubProcessActivity.class);
@@ -61,12 +73,14 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView processName;
+        TextView productName;
         TextView subProcessCount;
         ImageView imgDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             processName = itemView.findViewById(R.id.processTitle);
+            productName = itemView.findViewById(R.id.product_name);
             subProcessCount = itemView.findViewById(R.id.sub_process_count);
             imgDelete = itemView.findViewById(R.id.img_delete_process);
 
@@ -78,20 +92,11 @@ public class ProcessAdapter extends RecyclerView.Adapter<ProcessAdapter.ViewHold
                     ProcessViewModel processViewModel =
                             new ViewModelProvider((ViewModelStoreOwner) v.getContext()).get(ProcessViewModel.class);
                     processViewModel.deleteProcess(process);
+                    notifyDataSetChanged();
                     Toast.makeText(v.getContext(), "Deleted", Toast.LENGTH_SHORT).show();
                 }
             });
-
-            SubProcessViewModel subProcessViewModel =
-                    new ViewModelProvider((ViewModelStoreOwner) itemView.getContext()).get(SubProcessViewModel.class);
-            subProcessViewModel.countSubProcesses().observe((LifecycleOwner) itemView.getContext(), integer -> {
-                subProcessCount.setText(String.valueOf(integer));
-            });
-
-
         }
-
-
     }
 
 }

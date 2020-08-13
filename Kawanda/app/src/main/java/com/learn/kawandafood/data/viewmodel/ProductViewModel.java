@@ -6,10 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.learn.kawandafood.AppDatabase;
-import com.learn.kawandafood.data.entity.Client;
 import com.learn.kawandafood.data.entity.Product;
-import com.learn.kawandafood.data.repository.ClientRepository;
 import com.learn.kawandafood.data.repository.ProductRepository;
 
 import java.util.List;
@@ -39,6 +36,7 @@ public class ProductViewModel extends AndroidViewModel {
     public LiveData<Product> getProduct(int id) {
         return productRepository.getProduct(id);
     }
+
 
     public void deleteProduct(Product product) {
         productRepository.deleteProduct(product);

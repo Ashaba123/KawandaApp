@@ -16,6 +16,30 @@
             android:layout_margin="10dp"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/client" />
+
+                <TextView
+                    android:id="@+id/edit_client"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue"
+                    tools:text="@string/client" />
+
+
+            </LinearLayout>
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,25 +78,6 @@
                 android:layout_marginBottom="15dp"
                 android:fontFamily="sans-serif"
                 android:inputType="number" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="5dp"
-                android:fontFamily="sans-serif"
-                android:text="Raw Materials" />
-
-            <EditText
-                android:id="@+id/edit_rawmaterials"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="sans-serif"
-                android:inputType="text" />
 
             <Button
                 android:id="@+id/btnEditPrdct"
