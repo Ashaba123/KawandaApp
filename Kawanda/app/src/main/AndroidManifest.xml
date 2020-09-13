@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.process.AddSubProcessActivity"></activity>
+        <activity android:name=".ui.intro.IntroPage"></activity>
+        <activity android:name=".ui.intro.FourthPage" />
+        <activity android:name=".ui.intro.ThirdPage" />
+        <activity android:name=".ui.intro.SecondPage" />
+        <activity android:name=".ui.intro.FirstPage" />
+        <activity android:name=".ui.process.AddSubProcessActivity" />
         <activity android:name=".ui.process.BrowseSubProcessActivity" />
         <activity
             android:name=".ui.clients.BrowseClientActivity"

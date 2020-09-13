@@ -24,7 +24,6 @@ public class SignupActivity extends AppCompatActivity {
     private EditText etfullname;
     private EditText etemail;
     private EditText etpassword;
-    private Button signUpBtn;
     private ProgressBar progressBar;
 
     @Override
@@ -36,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     private void intitUI() {
-        signUpBtn = findViewById(R.id.btnSignUp);
+        Button signUpBtn = findViewById(R.id.btnSignUp);
         etfullname = findViewById(R.id.fullnames);
         etemail = findViewById(R.id.email);
         etpassword = findViewById(R.id.password);
@@ -139,6 +138,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
         startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+
 
     }
 }

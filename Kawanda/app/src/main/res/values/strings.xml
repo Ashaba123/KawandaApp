@@ -42,4 +42,6 @@
     <string name="client">Client:</string>
     <string name="product_name">Product Name:</string>
     <string name="quantity_kgs">Quantity(Kgs)</string>
+    <string name="email_email_com">Email@email.com</string>
+    <string name="username">Username</string>
 </resources>
