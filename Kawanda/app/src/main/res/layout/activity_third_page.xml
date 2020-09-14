@@ -36,14 +36,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:padding="20dp"
             app:cardElevation="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
@@ -58,30 +58,37 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
                         android:text="Select or Create a Process for the Product"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="24sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
-                        android:text="description adsas
-                    dasdasdasdasdasdasdasdasdasdasasdasdasd
-                    asdasdasdasdasdasdasdasdasdasdasdasdasda
-                    sdasdasdasdafsfsdfsfsdfsdfsdfsdfsdfsdfsdfsd" />
+                        android:text="In the Process Card, Select a Process or Click the (+) to add a Process." />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:text="Click Next to Continue"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="italic" />
+
 
                     <Button
-                        android:id="@+id/btnIntoNext"
+                        android:id="@+id/btnthirdNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/btn_bg"
+                        android:background="@drawable/round_bg"
                         android:fontFamily="sans-serif"
                         android:text="Next"
                         android:textColor="@color/white"
@@ -92,8 +99,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -116,7 +122,6 @@
                         android:fontFamily="sans-serif"
                         android:gravity="center"
                         android:text="@string/kawandacopyright" />
-
                 </LinearLayout>
 
 

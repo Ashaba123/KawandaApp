@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/backgroud_gradient" />
+            android:background="@drawable/backgroud_gradient"
+            android:contentDescription="background" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -31,7 +32,8 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:padding="10dp">
 
         <LinearLayout
@@ -44,8 +46,11 @@
                 android:id="@+id/fullnames"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:drawableEnd="@drawable/ic_person_black_24dp"
+                android:layout_margin="16dp"
+                android:drawablePadding="16dp"
+                android:background="@drawable/round_border"
+                android:padding="12dp"
+                android:drawableStart="@drawable/ic_person_black_24dp"
                 android:fontFamily="sans-serif"
                 android:hint="@string/enterUsername"
                 android:inputType="textEmailAddress" />
@@ -54,9 +59,12 @@
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:drawableEnd="@drawable/ic_email_black_24dp"
+                android:layout_margin="16dp"
+                android:drawablePadding="12dp"
+                android:drawableStart="@drawable/ic_email_black_24dp"
                 android:fontFamily="sans-serif"
+                android:background="@drawable/round_border"
+                android:padding="12dp"
                 android:hint="@string/enterEmail"
                 android:inputType="textEmailAddress"
                  />
@@ -67,10 +75,15 @@
                 app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
+                android:layout_margin="16dp"
                 android:fontFamily="sans-serif"
+                android:background="@drawable/round_border"
+                android:padding="12dp"
+                android:drawablePadding="16dp"
+                android:drawableStart="@drawable/ic_lock_black_24dp"
                 android:hint="@string/enterPassword"
                 android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -81,8 +94,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/round_bg"
                 android:fontFamily="sans-serif"
+                android:textStyle="bold"
                 android:text="@string/sign_up"
                 android:textColor="@color/white" />
 
@@ -95,20 +109,21 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/layout_input"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:fontFamily="sans-serif"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="32dp"
         android:text="@string/usersignup"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="@color/white"
-        android:textSize="35sp" />
+        android:textSize="30sp" />
 
 
     <ProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:theme="@style/ProgressColor"
         android:max="100"
+        android:layout_below="@id/layout_input"
         android:visibility="invisible" />
 
 </RelativeLayout>

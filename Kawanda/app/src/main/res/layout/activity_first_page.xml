@@ -36,14 +36,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:padding="20dp"
             app:cardElevation="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
@@ -51,37 +51,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
-                        android:text="Create a Client"
-                        android:textColor="@color/blue"
+                        android:text="@string/create_a_client"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="24sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
-                        android:text="description adsas
-                    dasdasdasdasdasdasdasdasdasdasasdasdasd
-                    asdasdasdasdasdasdasdasdasdasdasdasdasda
-                    sdasdasdasdafsfsdfsfsdfsdfsdfsdfsdfsdfsdfsd" />
+                        android:text="First Create a Client by cliking on the Clients card and enter all details of the Client." />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="sans-serif"
+                        android:textStyle="italic"
+                        android:text="Click Next to Continue"/>
 
                     <Button
-                        android:id="@+id/btnIntoNext"
+                        android:id="@+id/btnFirstNext"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/btn_bg"
+                        android:background="@drawable/round_bg"
                         android:fontFamily="sans-serif"
                         android:text="Next"
                         android:textColor="@color/white"
@@ -92,31 +97,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="vertical">
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-black"
-                        android:gravity="center"
-                        android:text="@string/kawanda" />
-
+                        android:text="@string/kawanda"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:fontFamily="sans-serif-medium"
-                        android:gravity="center"
-                        android:text="@string/kawanda2" />
-
+                        android:text="@string/kawanda2"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif"
                         android:gravity="center"
-                        android:text="@string/kawandacopyright" />
-
+                        android:fontFamily="sans-serif"
+                        android:text="@string/kawandacopyright"/>
                 </LinearLayout>
 
 

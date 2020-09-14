@@ -10,28 +10,30 @@
     <LinearLayout
         android:id="@+id/ly1"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="140dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="60dip"
             android:layout_height="60dip"
             android:layout_gravity="center"
-            android:background="@drawable/img"
+            android:background="@drawable/profile"
             android:scaleType="fitCenter" />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="5dp"
+            android:layout_marginTop="10dp"
             android:textSize="16sp"
             android:fontFamily="sans-serif"
             android:textColor="@color/white"
             android:textAllCaps="true"
-            android:text="@string/profile_tile"/>
+            android:text="@string/profile_tile" />
 
 
     </LinearLayout>
@@ -56,17 +58,38 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
                 <TextView
+                    android:layout_weight="1"
                     android:id="@+id/username_profile"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif"
                     android:gravity="center"
-                    android:padding="10dp"
                     android:text="@string/username"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
+
+                <ImageButton
+
+                    android:layout_weight=".0005"
+                    android:id="@+id/btnLogout"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_logout"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/logout" />
+
+
+            </LinearLayout>
 
                 <TextView
                     android:id="@+id/user_email"
@@ -102,7 +125,7 @@
                     android:fontFamily="sans-serif"
                     android:paddingTop="5dp"
                     android:text="@string/changePass"
-                    android:textColor="@color/blue" />
+                    android:textColor="@color/colorPrimary" />
 
                 <EditText
                     android:id="@+id/new_password"
@@ -118,22 +141,23 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
-                    android:background="@drawable/btn_bg"
+                    android:background="@drawable/round_bg"
                     android:fontFamily="sans-serif"
                     android:text="@string/save"
                     android:textColor="@color/white"
                     android:visibility="visible" />
 
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="invisible" />
+
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="invisible" />
 
     </LinearLayout>
 
@@ -147,7 +171,7 @@
         android:background="?android:attr/windowBackground"
         android:foregroundGravity="bottom"
         app:itemTextColor="@color/black"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="auto"
         app:menu="@menu/bottom_nav" />
 
 

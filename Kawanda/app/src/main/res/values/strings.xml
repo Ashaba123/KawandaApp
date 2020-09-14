@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Kawanda Food</string>
+    <string name="app_name">Kawanda Food App</string>
     <string name="splashtitle">Kawanda</string>
     <string name="splashtitle1">Food Processing</string>
     <string name="splashtitle2">Inventory Management Application</string>
@@ -44,4 +44,6 @@
     <string name="quantity_kgs">Quantity(Kgs)</string>
     <string name="email_email_com">Email@email.com</string>
     <string name="username">Username</string>
+    <string name="create_a_client">Create a Client</string>
+    <string name="logout">Logout</string>
 </resources>

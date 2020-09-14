@@ -1,7 +1,6 @@
 package com.learn.kawandafood.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -15,6 +14,7 @@ import com.learn.kawandafood.R;
 import com.learn.kawandafood.data.entity.User;
 import com.learn.kawandafood.data.viewmodel.UserViewModel;
 import com.learn.kawandafood.ui.auth.LoginActivity;
+import com.learn.kawandafood.ui.intro.IntroPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private static final long SPLASH_SCREEN_TIME = 1800L;
     private List<User> userList;
+    private int isloggedIn ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +39,16 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void onChanged(List<User> users) {
                 userList = users;
+                for(User user :users){
+                    isloggedIn =user.isLoggedIn;
+                }
             }
         });
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                int i = userList.size();
-
-                if (userList.isEmpty()) {
+                if (userList.isEmpty() && isloggedIn==0) {
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     finish();
                 } else {

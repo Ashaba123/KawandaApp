@@ -68,11 +68,6 @@ public class ReportsActivity extends AppCompatActivity {
                     case R.id.menu_item_profile:
                         startActivity(new Intent(ReportsActivity.this, ProfileActivity.class));
                         break;
-
-                    case R.id.menu_item_out:
-                        startActivity(new Intent(ReportsActivity.this, LoginActivity.class));
-                        finish();
-                        break;
                 }
 
                 return true;

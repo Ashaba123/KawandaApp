@@ -59,7 +59,7 @@
         android:background="?android:attr/windowBackground"
         android:foregroundGravity="bottom"
         app:itemTextColor="@color/black"
-        app:labelVisibilityMode="labeled"
+        app:labelVisibilityMode="auto"
         app:menu="@menu/bottom_nav" />
 
 

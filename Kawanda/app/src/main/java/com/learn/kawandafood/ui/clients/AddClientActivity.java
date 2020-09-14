@@ -37,6 +37,7 @@ public class AddClientActivity extends AppCompatActivity {
     }
 
     private void initUI() {
+        //initialise the different components from the xml file
         clientName = findViewById(R.id.clientname);
         clientNumber = findViewById(R.id.phonenumber);
         saveClient = findViewById(R.id.btnAddClient);
@@ -49,35 +50,6 @@ public class AddClientActivity extends AppCompatActivity {
             }
         });
 
-        //Bottom navigation
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-                switch (menuItem.getItemId()) {
-                    case R.id.menu_item_home:
-                        startActivity(new Intent(AddClientActivity.this, MainActivity.class));
-                        finish();
-                        break;
-                    case R.id.menu_item_process:
-                        startActivity(new Intent(AddClientActivity.this, BrowseProcessActivity.class));
-                        finish();
-                        break;
-                    case R.id.menu_item_profile:
-                        startActivity(new Intent(AddClientActivity.this, ProfileActivity.class));
-                        finish();
-                        break;
-
-                    case R.id.menu_item_out:
-                        startActivity(new Intent(AddClientActivity.this, LoginActivity.class));
-                        finish();
-                        break;
-                }
-
-                return true;
-            }
-        });
     }
 
     private void saveClients() {

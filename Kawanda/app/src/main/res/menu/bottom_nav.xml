@@ -12,11 +12,5 @@
         android:id="@+id/menu_item_profile"
         android:icon="@drawable/ic_person_black_24dp"
         android:title="Profile" />
-    <item
-        android:id="@+id/menu_item_out"
-        android:icon="@drawable/ic_logout"
-        android:title="Logout" />
-
-
 
 </menu>

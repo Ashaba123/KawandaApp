@@ -1,6 +1,7 @@
 package com.learn.kawandafood.data.viewmodel;
 
 import android.app.Application;
+import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -29,6 +30,9 @@ public class UserViewModel extends AndroidViewModel {
 
     public void changepassword(int id, String password) {
         userRepository.changepassword(id, password);
+    }
+    public void loginStatus(int id, int isLoggedIn){
+        userRepository.loginStatus(id,isLoggedIn);
     }
 
     public LiveData<List<User>> getUsers() {

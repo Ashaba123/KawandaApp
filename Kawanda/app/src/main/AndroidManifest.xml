@@ -4,12 +4,16 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.intro.IntroPage"></activity>
+        <activity
+            android:name=".ui.DashboardActivity"
+            android:theme="@style/AppTheme.Logins" />
+        <activity android:name=".ui.intro.IntroPage" />
         <activity android:name=".ui.intro.FourthPage" />
         <activity android:name=".ui.intro.ThirdPage" />
         <activity android:name=".ui.intro.SecondPage" />
@@ -33,7 +37,8 @@
             android:label="@string/addPrdct" />
         <activity
             android:name=".ui.ProfileActivity"
-            android:label="@string/profile" />
+            android:label="@string/profile"
+            android:theme="@style/AppTheme.Logins" />
         <activity
             android:name=".ui.reports.ReportsActivity"
             android:label="@string/reports" />
@@ -54,11 +59,11 @@
         </activity>
         <activity
             android:name=".ui.auth.SignupActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Logins" />
         <activity
             android:name=".ui.auth.LoginActivity"
             android:label="@string/login"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.Logins" />
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/Dashboard" />

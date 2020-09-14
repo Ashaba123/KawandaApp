@@ -38,6 +38,11 @@ public class UserRepository {
         });
 
     }
+    public void loginStatus(int id, int isLoggedIn){
+        AsyncTask.execute(() -> {
+            AppDatabase.getInstance(context).userDao().loginStatus(id,isLoggedIn);
+        });
+    }
 
     public LiveData<User> getUser(String name, String password) {
         return AppDatabase.getInstance(context).userDao().getUser(name, password);

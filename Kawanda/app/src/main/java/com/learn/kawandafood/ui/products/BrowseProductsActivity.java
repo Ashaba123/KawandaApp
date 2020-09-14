@@ -101,10 +101,6 @@ public class BrowseProductsActivity extends AppCompatActivity {
                         finish();
                         break;
 
-                    case R.id.menu_item_out:
-                        startActivity(new Intent(BrowseProductsActivity.this, LoginActivity.class));
-                        finish();
-                        break;
                 }
 
                 return true;

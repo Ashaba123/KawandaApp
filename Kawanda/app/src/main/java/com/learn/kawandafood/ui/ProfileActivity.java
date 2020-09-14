@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +51,9 @@ public class ProfileActivity extends AppCompatActivity {
         newPassword = findViewById(R.id.new_password);
         btnSavePassword = findViewById(R.id.btnSavePassword);
         progressBar = findViewById(R.id.progressBar);
+        ImageButton logOutBtn =findViewById(R.id.btnLogout);
+
+
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
         userViewModel.getUsers().observe(this, new Observer<List<User>>() {
@@ -62,6 +66,17 @@ public class ProfileActivity extends AppCompatActivity {
                     email.setText(user.getEmail());
 
                 }
+            }
+        });
+
+        logOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //to logout the user
+                userViewModel.loginStatus(id,0);
+                startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+                finish();
+
             }
         });
 
@@ -83,18 +98,17 @@ public class ProfileActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_item_home:
                         startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_process:
                         startActivity(new Intent(ProfileActivity.this, BrowseProcessActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(ProfileActivity.this, ProfileActivity.class));
-                        break;
-
-                    case R.id.menu_item_out:
-                        startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
                         finish();
                         break;
+
                 }
 
                 return true;

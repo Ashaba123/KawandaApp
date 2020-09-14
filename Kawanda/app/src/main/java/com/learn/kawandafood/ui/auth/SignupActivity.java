@@ -16,6 +16,7 @@ import com.learn.kawandafood.R;
 import com.learn.kawandafood.data.entity.User;
 import com.learn.kawandafood.data.viewmodel.UserViewModel;
 import com.learn.kawandafood.ui.MainActivity;
+import com.learn.kawandafood.ui.intro.IntroPage;
 
 import java.util.regex.Matcher;
 
@@ -29,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_signup2);
         intitUI();
 
     }
@@ -121,9 +122,10 @@ public class SignupActivity extends AppCompatActivity {
             user.fullName = fullname;
             user.email = email;
             user.password = password;
+            user.isLoggedIn = 1;
             userViewModel.insertNewUser(user);
 
-            startActivity(new Intent(SignupActivity.this, MainActivity.class));
+            startActivity(new Intent(SignupActivity.this, IntroPage.class));
             finish();
         }else{
             Toast.makeText(getApplicationContext(), "error adding user", Toast.LENGTH_LONG).show();

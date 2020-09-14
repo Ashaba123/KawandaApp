@@ -40,5 +40,8 @@ public interface UserDao {
     @Query("UPDATE user SET password = :password  WHERE uid = :id")
     void changepassword(int id, String password);
 
+    @Query("UPDATE user SET isLoggedIn = :isLoggedIn  WHERE uid = :id")
+    void loginStatus(int id, int isLoggedIn);
+
 
 }

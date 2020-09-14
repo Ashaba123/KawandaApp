@@ -36,14 +36,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:padding="20dp"
             app:cardElevation="1dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
@@ -51,37 +51,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
                         android:text="View Reports"
-                        android:textColor="@color/blue"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="24sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="20dp"
                         android:fontFamily="sans-serif"
                         android:gravity="center"
-                        android:text="description adsas
-                    dasdasdasdasdasdasdasdasdasdasasdasdasd
-                    asdasdasdasdasdasdasdasdasdasdasdasdasda
-                    sdasdasdasdafsfsdfsfsdfsdfsdfsdfsdfsdfsdfsd" />
+                        android:text="In the Reports Card, View the Report for the Product,Process and Finished Product  ." />
+
 
                     <Button
-                        android:id="@+id/btnIntoContinue"
+                        android:id="@+id/btnFourthContinue"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
-                        android:background="@drawable/btn_bg"
+                        android:background="@drawable/round_bg"
                         android:fontFamily="sans-serif"
                         android:text="Continue"
                         android:textColor="@color/white"
@@ -92,8 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -116,9 +113,7 @@
                         android:fontFamily="sans-serif"
                         android:gravity="center"
                         android:text="@string/kawandacopyright" />
-
                 </LinearLayout>
-
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
