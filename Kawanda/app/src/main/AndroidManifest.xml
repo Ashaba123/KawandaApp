@@ -10,9 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".ui.DashboardActivity"
-            android:theme="@style/AppTheme.Logins" />
         <activity android:name=".ui.intro.IntroPage" />
         <activity android:name=".ui.intro.FourthPage" />
         <activity android:name=".ui.intro.ThirdPage" />
@@ -66,7 +63,7 @@
             android:theme="@style/AppTheme.Logins" />
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/Dashboard" />
+            android:theme="@style/AppTheme.Logins"/>
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@ package com.learn.kawandafood.ui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -25,13 +26,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayoutCompat productDash, processDash, reportDash, clientDash;
+    CardView productDash, processDash, reportDash, clientDash;
     private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dashboard);
         initUI();
     }
 
