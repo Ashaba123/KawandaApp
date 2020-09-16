@@ -106,12 +106,15 @@ public class BrowseSubProcessActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_item_home:
                         startActivity(new Intent(BrowseSubProcessActivity.this, MainActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_process:
                         startActivity(new Intent(BrowseSubProcessActivity.this, BrowseProcessActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(BrowseSubProcessActivity.this, ProfileActivity.class));
+                        finish();
                         break;
                 }
 

@@ -93,12 +93,15 @@ public class BrowseProcessActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_item_home:
                         startActivity(new Intent(BrowseProcessActivity.this, MainActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_process:
                         startActivity(new Intent(BrowseProcessActivity.this, BrowseProcessActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(BrowseProcessActivity.this, ProfileActivity.class));
+                        finish();
                         break;
 
                 }

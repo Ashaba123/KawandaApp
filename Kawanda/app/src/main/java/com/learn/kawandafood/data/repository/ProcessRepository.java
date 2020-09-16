@@ -33,6 +33,10 @@ public class ProcessRepository {
         return  AppDatabase.getInstance(context).processDao().getAllProcesses();
     }
 
+    public  LiveData<Integer>countProcesses(){
+        return  AppDatabase.getInstance(context).processDao().countProcesses();
+    }
+
     public LiveData<Process> getById(int id) {
         return  AppDatabase.getInstance(context).processDao().getById(id);
     }

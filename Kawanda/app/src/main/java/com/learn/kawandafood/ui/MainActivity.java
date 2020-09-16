@@ -27,7 +27,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     CardView productDash, processDash, reportDash, clientDash;
-    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,12 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_item_home:
                         startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_process:
                         startActivity(new Intent(MainActivity.this, BrowseProcessActivity.class));
+                        finish();
                         break;
                     case R.id.menu_item_profile:
                         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                        finish();
                         break;
 
                 }

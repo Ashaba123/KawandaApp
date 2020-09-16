@@ -31,7 +31,14 @@ public class FirstPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FirstPage.this, SecondPage.class));
+
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

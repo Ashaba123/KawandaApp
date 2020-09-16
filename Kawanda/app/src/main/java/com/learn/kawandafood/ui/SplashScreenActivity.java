@@ -22,7 +22,6 @@ import java.util.List;
 public class SplashScreenActivity extends AppCompatActivity {
 
     private static final long SPLASH_SCREEN_TIME = 1800L;
-    private List<User> userList;
     private int isloggedIn ;
 
     @Override
@@ -34,11 +33,9 @@ public class SplashScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        userList = new ArrayList<>();
         userViewModel.getUsers().observe(this, new Observer<List<User>>() {
             @Override
             public void onChanged(List<User> users) {
-                userList = users;
                 for(User user :users){
                     isloggedIn =user.isLoggedIn;
                 }
@@ -48,7 +45,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (userList.isEmpty() && isloggedIn==0) {
+                if (isloggedIn==0) {
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     finish();
                 } else {
