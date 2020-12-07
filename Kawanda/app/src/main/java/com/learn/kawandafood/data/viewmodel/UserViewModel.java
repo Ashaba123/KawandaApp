@@ -24,6 +24,7 @@ public class UserViewModel extends AndroidViewModel {
 
     }
 
+    //asks the repository how many users do we have
     public LiveData<Integer> countUsers() {
         return userRepository.countUsers();
     }
@@ -35,14 +36,17 @@ public class UserViewModel extends AndroidViewModel {
         userRepository.loginStatus(id,isLoggedIn);
     }
 
+    //get all users added
     public LiveData<List<User>> getUsers() {
         return userRepository.getUsers();
     }
 
+    //add a user
     public void insertNewUser(User user) {
         userRepository.addUser(user);
     }
 
+    //get a single user
     public LiveData<User> getUser(String name, String password) {
         return userRepository.getUser(name, password);
     }

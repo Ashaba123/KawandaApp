@@ -32,6 +32,8 @@ public class IntroPage extends AppCompatActivity {
         usernameTxt = findViewById(R.id.username);
         Button next = findViewById(R.id.btnIntoNext);
 
+        //the usernametxt we ask the view model to get us the name of the user who has logged in
+        //and set that name
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.getUsers().observe(this, new Observer<List<User>>() {
             @Override

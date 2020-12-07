@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        initUI();
+        daisy();
     }
 
-    private void initUI() {
+    private void daisy() {
         productDash = findViewById(R.id.dash_product_box);
         processDash = findViewById(R.id.dash_process_box);
         reportDash = findViewById(R.id.dash_reports_box);

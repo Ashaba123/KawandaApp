@@ -63,7 +63,7 @@
             android:theme="@style/AppTheme.Logins" />
         <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/AppTheme.Logins"/>
+            android:theme="@style/AppTheme.Logins" />
     </application>
 
 </manifest>

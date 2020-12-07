@@ -19,6 +19,7 @@ public class UserRepository {
 
     public void addUser(final User user) {
         //AsyncTask.execute(()-> DbDatabase.getInstance(context).dbDao().insertItem(dbTable));
+        //runs in the background as you insert a new user
         AsyncTask.execute(new Runnable(
         ) {
             @Override
@@ -29,15 +30,18 @@ public class UserRepository {
     }
 
     public LiveData<Integer> countUsers() {
+        //counts how many users
         return AppDatabase.getInstance(context).userDao().countUsers();
     }
 
     public void changepassword(int id, String password) {
+        //if you forgot password you can change it
         AsyncTask.execute(() -> {
             AppDatabase.getInstance(context).userDao().changepassword(id, password);
         });
 
     }
+    //checks if you are logged in or not
     public void loginStatus(int id, int isLoggedIn){
         AsyncTask.execute(() -> {
             AppDatabase.getInstance(context).userDao().loginStatus(id,isLoggedIn);
@@ -53,6 +57,7 @@ public class UserRepository {
     }
 
     public LiveData<List<User>> getUsers() {
+        //dbDatabaseInstance is out database returned.userDao go to function getUsers
         return AppDatabase.getInstance(context).userDao().getUsers();
     }
 
